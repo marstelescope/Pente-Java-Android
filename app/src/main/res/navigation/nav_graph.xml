@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.example.pente.MainFragment"
+        android:label=""
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_NewGameFragment"
+            app:destination="@id/NewGameFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_ResumeGameFragment"
+            app:destination="@id/ResumeGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/NewGameFragment"
+        android:name="com.example.pente.NewGameFragment"
+        android:label=""
+        tools:layout="@layout/fragment_new_game">
+        <action
+            android:id="@+id/action_NewGameFragment_to_CoinTossFragment"
+            app:destination="@id/CoinTossFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ResumeGameFragment"
+        android:name="com.example.pente.ResumeGameFragment"
+        tools:layout="@layout/fragment_resume_game" >
+        <action
+            android:id="@+id/action_ResumeGameFragment_to_BoardFragment"
+            app:destination="@id/BoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BoardFragment"
+        android:name="com.example.pente.BoardFragment"
+        tools:layout="@layout/fragment_board">
+        <action
+            android:id="@+id/action_BoardFragment_to_CoinTossFragment"
+            app:destination="@id/CoinTossFragment" />
+        <action
+            android:id="@+id/action_BoardFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CoinTossFragment"
+        android:name="com.example.pente.CoinTossFragment"
+        android:label=""
+        tools:layout="@layout/fragment_coin_toss" >
+        <action
+            android:id="@+id/action_CoinTossFragment_to_BoardFragment"
+            app:destination="@id/BoardFragment" />
+    </fragment>
+</navigation>
